@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2018 18:48:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Funcoes" table="funcoes" catalog="apf" optimistic-lock="version">
+        <id name="idFuncoes" type="java.lang.Integer">
+            <column name="idFuncoes" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contagem" class="entities.Contagem" fetch="select">
+            <column name="Contagem_idContagem" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="Nome" length="45" not-null="true" />
+        </property>
+        <property name="tipoFuncao" type="string">
+            <column name="TipoFuncao" length="45" not-null="true" />
+        </property>
+        <property name="qntTd" type="int">
+            <column name="QntTD" not-null="true" />
+        </property>
+        <property name="qntTr" type="int">
+            <column name="QntTR" not-null="true" />
+        </property>
+        <property name="complexidade" type="int">
+            <column name="Complexidade" not-null="true" />
+        </property>
+        <property name="qntPf" type="int">
+            <column name="QntPF" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
